@@ -1,0 +1,39 @@
+<html>
+
+    <head>
+        <title>weather - my website</title>
+    </head>
+
+    <body>
+
+        <h1>Weather</h1>
+
+        <h4>Current time: {{ weather.time }}</h4>
+
+        <table style="font-size: large;">
+            <tr>
+              <td>temperature</td>
+              <td>{{ weather.temperature }}</td>
+            </tr>
+
+            <tr>
+                <td>percipitation</td>
+                <td>{{ weather.percipitation }}</td>
+            </tr>
+
+            <tr>
+                <td>wind speed</td>
+                <td>{{ weather.wind_speed }}</td>
+            </tr>
+
+            <tr>
+                <td>type</td>
+                <td>{{ weather.type }}</td>
+            </tr>
+
+          </table>
+        
+
+    </body>
+
+</html>
