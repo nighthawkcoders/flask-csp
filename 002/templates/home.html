@@ -15,6 +15,14 @@
 
         <p>Another paragraph...</p>
 
+        <h2>Active Links</h2>
+
+        <p><a href="{{ url_for('weather_function') }}">Weather</a></p>
+
+        <p><a href="{{ url_for('hello_function', name='nathan') }}">Say hello to nathan</a></p>
+
+        <p><a href="{{ url_for('sum_api', num1=10, num2=5)}}">Add 10 and 5 (api)</a></p>
+
     </body>
 
 </html>

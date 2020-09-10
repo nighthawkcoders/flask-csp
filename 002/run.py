@@ -10,12 +10,12 @@ def home():
 
 
 @app.route('/hello/<name>')
-def about(name):
+def hello_function(name):
 
     return render_template("hello.html", name=name)
 
 @app.route('/weather')
-def weather():
+def weather_function():
 
     # BONUS: return the current time as well
     time = datetime.now().time()
