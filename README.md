@@ -41,7 +41,7 @@ Finnally start the server with ```$ python run.py ```
 - Passing arguments through a url
 - Using jinja to read variables from HTML
 
-## 03: Creating an simple online store
+## 03: Creating an online store
 - Dynamic url's in flask
 - Jinja flow control and conditional statements
 - Passing objects of data to be displayed
