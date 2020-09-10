@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+        <title>My Store</title>
+    </head>
+
+    <body>
+
+        <h1>Products</h1>
+
+
+        {% for product in product_list %}
+
+        <div style="border-style: dotted; margin-top: 20px; width: 50%;" class="product">
+
+            <h3>{{ product.name }}</h3>
+            <p>Price: ${{ product.price }}</p>
+
+            {% if not product.in_stock %}
+
+            <h4 style="color: red;">SOLD OUT</h4>
+            {% endif %}
+
+
+        </div>
+
+        {% endfor %}
+
+
+        <p>Go back to <a href="{{ url_for('home') }}">home</a></p>
+
+    </body>
+
+
+    <!-- Ignore all of this it is just for better styling -->
+    <style>
+    
+        .product > *{
+            margin-left: 10px;
+        }
+
+    </style>
+    <!-- End Styling-->
+
+</html>

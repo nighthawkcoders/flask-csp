@@ -40,3 +40,9 @@ Finnally start the server with ```$ python run.py ```
 - Loading HTML from a seperate file
 - Passing arguments through a url
 - Using jinja to read variables from HTML
+
+## 03: Creating an simple online store
+- Dynamic url's in flask
+- Jinja flow control and conditional statements
+- Passing objects of data to be displayed
+- Handling forms and user input
