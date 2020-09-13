@@ -1,0 +1,23 @@
+<html>
+
+    <head>
+        <title>My Store</title>
+    </head>
+
+    <body>
+
+        <h1>Welcome to my Store!</h1>
+
+        <p>Click <a href="{{ url_for('products') }}">here</a> to see our products!</p>
+
+        <p>Click <a href="{{ url_for('product_search') }}">here</a> to search through our products!</p>
+
+
+
+        <p><p style="color: red;">ADMIN ONLY</p> Click <a href="{{ url_for('product_search') }}">here</a> to add a product</p>
+
+
+    </body>
+
+
+</html>

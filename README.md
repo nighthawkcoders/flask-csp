@@ -45,4 +45,9 @@ Finnally start the server with ```$ python run.py ```
 - Dynamic url's in flask
 - Jinja flow control and conditional statements
 - Passing objects of data to be displayed
-- Handling forms and user input
+- Handling forms and user input (POST)
+
+## 04: Improving online store
+- Package structure and code delegations
+- SQLite database using flask_sqlalchemy
+- Using class inheritance and objects
