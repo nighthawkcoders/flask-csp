@@ -1,0 +1,73 @@
+<html>
+
+    <head>
+        <title>My Store</title>
+    </head>
+
+    <body>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+
+        <h1>Admin Page</h1>
+
+        <p>Add an item...</p>
+
+
+        <form action="", method="POST" novalidate>
+            {{ form.hidden_tag()}} <!--Security feature-->
+
+            <p>
+                {{ form.name.label }} <br> <!-- <br> is a line break, takes text to next available line-->
+                {{ form.name(size=20) }}
+
+                <!-- error messages here to let the user know what they did wrong-->
+                {% for error in form.name.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                <!-- end error messages -->
+            </p>
+
+            <p>
+                {{ form.price.label }}<br>
+                {{ form.price(size=20) }}
+
+                <!-- error messages here to let the user know what they did wrong-->
+                {% for error in form.name.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                <!-- end error messages -->
+            </p>
+
+            <p>
+                {{ form.in_stock.label }}<br>
+                {{ form.in_stock(size=20) }}
+
+                <!-- error messages here to let the user know what they did wrong-->
+                {% for error in form.in_stock.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                <!-- end error messages -->
+            </p>
+
+            <p>{{ form.submit }}</p>
+
+        </form>
+
+
+
+        <p><a href="{{ url_for('products') }}">See product list</a></p>
+        <p><a href="{{ url_for('product_search') }}">Search products</a></p>
+
+        <p>Go back to <a href="{{ url_for('home') }}">home</a></p>
+    </body>
+
+</html>
