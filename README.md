@@ -51,3 +51,6 @@ Finnally start the server with ```$ python run.py ```
 - Package structure and code delegations
 - SQLite database using flask_sqlalchemy
 - Using class inheritance and objects
+- 004b advanced code delegations
+
+## 05: CalenPeer p1
