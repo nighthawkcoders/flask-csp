@@ -1,6 +1,6 @@
 # flask-csp
 
-This repo contains incrementing modules on how to build a website in Flask.
+This repo contains incrementing modules on how to build a functional website in Flask.
 
 ## Installation
 ``` git clone https://github.com/nighthawkcoders/flask-csp ``` to get started.
