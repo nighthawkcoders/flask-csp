@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.fields.html5 import DateField #Special, will allow user to pick date from calender
 from wtforms.validators import DataRequired, EqualTo, ValidationError
 
 from .models import User
@@ -23,3 +24,8 @@ class RegisterForm(FlaskForm):
         if user is not None: #so if it exists
             raise ValidationError("That username already exists, try a different one.")
         
+
+class EventForm(FlaskForm):
+    event_name = StringField("Event Name", validators=[DataRequired()])
+    event_date = DateField("Event Date", validators=[DataRequired()])
+    submit = SubmitField('Create!')

@@ -53,4 +53,12 @@ Finnally start the server with ```$ python run.py ```
 - Using class inheritance and objects
 - 004b advanced code delegations
 
-## 05: CalenPeer p1
+## 05: CalenPeer p.1
+- User creation with database
+- Handling user objects
+- Base templates
+
+## 06: CalenPeer p.2
+- One-to-many relationships
+- Aggregating models in python
+

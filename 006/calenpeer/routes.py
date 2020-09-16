@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect
 from flask_login import current_user, login_user, logout_user, login_required
-from .models import User
-from .forms import LoginForm, RegisterForm
+from .models import User, Event
+from .forms import LoginForm, RegisterForm, EventForm
 from . import app, db
 
 
@@ -57,4 +57,24 @@ def register():
 @app.route('/calender')
 @login_required
 def calender():
-    return render_template("calender.html")
+
+    events = Event.query.all()
+
+    return render_template("calender.html", events=events)
+
+
+@app.route('/create-event', methods=['GET', 'POST'])
+@login_required
+def create_event():
+
+    form = EventForm()
+    if form.validate_on_submit():
+        event_name = form.event_name.data
+        event_date = form.event_date.data # This returns a date as a python datetime.date object yyyy-mm-dd
+
+        new_event = Event(event_name=event_name, event_date=event_date, user_id=current_user.id)
+        db.session.add(new_event)
+        db.session.commit()
+
+
+    return render_template("create_event.html", form=form)

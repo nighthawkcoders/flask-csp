@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+        <title>CalenPeer</title>
+    </head>
+
+    <body>
+
+
+        <div>
+            CalenPeer ||
+            <a href="{{ url_for('home') }}">Home</a>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('calender') }}">Calender</a>
+            <a href="{{ url_for('create_event') }}">Create Event</a>
+            <small>Welcome back {{ current_user.username }}!</small>
+            {% endif %}
+
+        </div>
+
+        <hr>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+
+
+        {% block content %}
+
+        {% endblock %}
+
+    </body>
+
+</html>
