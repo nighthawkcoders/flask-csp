@@ -7,12 +7,13 @@
 
     {% for event in events %}
     
-    <div>
-
-        <h3> {{ event.event_name }}</h3>
-        <p>{{ event.user.username }}</p>
-        <p>{{ event.event_date }}</p>
-
+    <div style="background-color: rgb(179, 179, 179); border-radius: 30px; width: 30%; padding: 2%; margin-top: 2%;">
+        <div style="margin-left: 0;">
+            <h2> {{ event.event_name }}</h2>
+            <p>posted by: <b>{{ event.user.username }}</b></p>
+            <p>{{ event.event_description }}</p>
+            <p>{{ event.event_date }}</p>
+        </div>
 
     </div>
 

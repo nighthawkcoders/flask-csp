@@ -28,6 +28,7 @@ def load_user(id):
 class Event(db.Model):
     id_ = db.Column(db.Integer, primary_key=True)
     event_name = db.Column(db.String(30))
+    event_description = db.Column(db.String(200))
     event_date = db.Column(db.DateTime) #db.DateTime is a python datetime object
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) #signifies one to many
 

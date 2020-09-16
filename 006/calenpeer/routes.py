@@ -59,6 +59,7 @@ def register():
 def calender():
 
     events = Event.query.all()
+    events = reversed(events)
 
     return render_template("calender.html", events=events)
 
@@ -71,10 +72,13 @@ def create_event():
     if form.validate_on_submit():
         event_name = form.event_name.data
         event_date = form.event_date.data # This returns a date as a python datetime.date object yyyy-mm-dd
+        event_description = form.event_description.data
 
-        new_event = Event(event_name=event_name, event_date=event_date, user_id=current_user.id)
+        new_event = Event(event_name=event_name, event_date=event_date, event_description=event_description, user_id=current_user.id)
         db.session.add(new_event)
         db.session.commit()
 
+        flash(f"Created event '{event_name}'!")
+        return redirect('/calender')
 
     return render_template("create_event.html", form=form)

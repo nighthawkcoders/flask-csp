@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.fields.html5 import DateField #Special, will allow user to pick date from calender
 from wtforms.validators import DataRequired, EqualTo, ValidationError
 
@@ -27,5 +27,6 @@ class RegisterForm(FlaskForm):
 
 class EventForm(FlaskForm):
     event_name = StringField("Event Name", validators=[DataRequired()])
+    event_description = TextAreaField("Event description")
     event_date = DateField("Event Date", validators=[DataRequired()])
     submit = SubmitField('Create!')

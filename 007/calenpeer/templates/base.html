@@ -28,16 +28,16 @@
                   </li>
                 {% else %}
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
-                  </li>
+
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('calender') }}">Calender</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('create_event') }}">Create Event</a>
                   </li>
-
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                  </li>
 
                 <small>Welcome back {{ current_user.username }}!</small>
                 {% endif %}
@@ -51,11 +51,13 @@
 
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
+        {% for message in messages %}
+
+        <div class="alert alert-secondary" role="alert" style="text-align: center;">
+          {{ message }}
+        </div>
+        {% endfor %}
+
         {% endif %}
         {% endwith %}
 
@@ -65,6 +67,14 @@
 
         {% endblock %}
 
+
+
+        <style>
+          .row{
+              margin-left: 0;
+              margin-right: 0;
+          }
+        </style>
     </body>
 
 </html>

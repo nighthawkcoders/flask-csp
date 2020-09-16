@@ -62,3 +62,5 @@ Finnally start the server with ```$ python run.py ```
 - One-to-many relationships
 - Aggregating models in python
 
+## 07 CalenPeer p.3
+- Basic Bootstrap
