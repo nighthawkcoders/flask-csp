@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, abort
 from flask_login import current_user, login_user, logout_user, login_required
 from .models import User, Event
 from .forms import LoginForm, RegisterForm, EventForm
@@ -82,3 +82,18 @@ def create_event():
         return redirect('/calender')
 
     return render_template("create_event.html", form=form)
+
+
+@app.route('/users/<username>')
+def user_page(username):
+
+    user = User.query.filter_by(username=username).first()
+
+    if user:
+        events = user.events
+        return render_template("user_page.html", username=username, events=events)
+
+    else:
+        abort(404)
+
+    return

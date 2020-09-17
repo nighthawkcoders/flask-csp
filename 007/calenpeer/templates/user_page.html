@@ -2,15 +2,11 @@
 
 {% block content %}
 
-
 <div class="row">
-
     <div class="col-12" style="text-align: center;">
-        <h1>Public Calender</h1>
+        <h1>Events for {{ username }}</h1>
     </div>
-
 </div>
-
 
 <div class="row">
 
@@ -19,7 +15,7 @@
     <div class="col-4" style="text-align: center; margin-top: 2%;">
 
         <h2> {{ event.event_name }}</h2>
-        <p>posted by: <a href="{{ url_for('user_page', username=event.user.username )}}"><b>{{ event.user.username }}</b></a></p>
+        <p>posted by: <b>{{ event.user.username }}</b></p>
         <p>{{ event.event_description }}</p>
         <p>{{ event.event_date }}</p>
 
@@ -29,7 +25,5 @@
     {% endfor %}
 
 </div>
-
-
 
 {% endblock %}
