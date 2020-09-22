@@ -41,6 +41,7 @@ def products():
     return render_template("products.html", product_list=product_list)
 
 
+# Not implemented
 @app.route('/search')
 def product_search():
     return render_template("search.html")
@@ -58,6 +59,10 @@ def admin():
     form = AddProductForm()
 
     if form.validate_on_submit():
+
+        print("name:", form.name.data)
+        print("price:", form.price.data)
+        print("in stock:", form.in_stock.data)
 
         new_product = {
             "name":form.name.data,
